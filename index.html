@@ -24,8 +24,13 @@
 <main>
 
     <div class="container">
+
+        <div class="row"></div>
+
         <div class="row">
+
             <div class="col s12 card z-depth-2">
+
                 <div class="card-content">
                     <span class="card-title">
                         Calculate your Amortization
@@ -36,33 +41,33 @@
                     <div class="container">
 
                         <!-- Chances are, we'll have a form -->
-                        <form enctype="application/x-www-form-urlencoded" onsubmit="return true;" action="#">
+                        <form enctype="application/x-www-form-urlencoded" onsubmit="onSubmitForm(); return false;" action="#">
 
                             <div class="row">
 
                                 <div class="input-field">
-                                    <input type="text" id="mortgage_amount" class="validate" required>
-                                    <label for="mortgage_amount">Input 1</label>
+                                    <input type="number" id="mortgage_amount" class="validate" required>
+                                    <label for="mortgage_amount">Mortgage Amount</label>
                                 </div>
 
                                 <div class="input-field">
-                                    <input type="text" id="annual_property_taxes" class="validate" required>
-                                    <label for="annual_property_taxes">Input 1</label>
+                                    <input type="number" id="annual_property_taxes" class="validate" required>
+                                    <label for="annual_property_taxes">Annual Property Taxes</label>
                                 </div>
 
                                 <div class="input-field">
-                                    <input type="text" id="annual_insurance_costs" class="validate" required>
-                                    <label for="annual_insurance_costs">Input 1</label>
+                                    <input type="number" id="annual_insurance_costs" class="validate" required>
+                                    <label for="annual_insurance_costs">Annual Insurance Costs</label>
                                 </div>
 
                                 <div class="input-field">
-                                    <input type="text" id="interest_rate" class="validate" required>
-                                    <label for="interest_rate">Input 1</label>
+                                    <input type="number" id="interest_rate" class="validate" required>
+                                    <label for="interest_rate">Interest Rate (Percent)</label>
                                 </div>
 
                                 <div class="input-field">
-                                    <input type="text" id="number_of_years" class="validate" required>
-                                    <label for="number_of_years">Input 1</label>
+                                    <input type="number" id="number_of_years" class="validate" required>
+                                    <label for="number_of_years">Number of Years</label>
                                 </div>
 
                                 <div class="row center-align">
@@ -74,10 +79,15 @@
                             </div>
 
                         </form>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
 
     <div id="output_dialog" class="modal">
