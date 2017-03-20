@@ -27,7 +27,7 @@ function onSubmitForm() {
 
     var errorNode;
 
-    if (isNaN(mortgage_amount) || mortgage_amount < 0) {
+    if (isNaN(mortgage_amount) || mortgage_amount <= 0) {
         errorNode = $('#error_mortgage_amount');
         errorNode.removeClass("hide");
         return false;
@@ -54,7 +54,7 @@ function onSubmitForm() {
         errorNode.addClass('hide');
     }
 
-    if (isNaN(interest_rate) || interest_rate < 0) {
+    if (isNaN(interest_rate) || interest_rate <= 0) {
         errorNode = $('#error_interest_rate');
         errorNode.removeClass("hide");
         return false;
@@ -64,7 +64,7 @@ function onSubmitForm() {
     }
 
 
-    if (isNaN(number_of_years) || number_of_years < 0) {
+    if (isNaN(number_of_years) || number_of_years < 0 || number_of_years > 600) {
         errorNode = $('#error_number_of_years');
         errorNode.removeClass("hide");
         return false;
