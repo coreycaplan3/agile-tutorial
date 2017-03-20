@@ -13,3 +13,10 @@ function closeModalDialog() {
 function onSubmitForm() {
     return true;
 }
+
+var object = {};
+object.mortgage_amount = 1;
+object.annual_property_taxes = 1;
+object.annual_insurance_costs = 1;
+object.interest_rate = 1;
+object.number_of_years = 1;
