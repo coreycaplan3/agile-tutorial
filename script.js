@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $('.modal').modal();
 
     $('#mortgage_amount').val("200000");
@@ -25,21 +25,63 @@ function onSubmitForm() {
     var interest_rate = $('#interest_rate').val();
     var number_of_years = $('#number_of_years').val();
 
-    if(!isNaN(mortgage_amount)) {
+    var errorNode;
+
+    if (isNaN(mortgage_amount) || mortgage_amount < 0) {
+        errorNode = $('#error_mortgage_amount');
+        errorNode.removeClass("hide");
         return false;
+    } else {
+        errorNode = $('#error_mortgage_amount');
+        errorNode.addClass('hide');
     }
-    if(!isNaN(annual_property_taxes)) {
+
+    if (isNaN(annual_property_taxes) || annual_property_taxes <= 0) {
+        errorNode = $('#error_annual_property_taxes');
+        errorNode.removeClass("hide");
         return false;
+    } else {
+        errorNode = $('#error_annual_property_taxes');
+        errorNode.addClass('hide');
     }
-    if(!isNaN(annual_insurance_costs)) {
+
+    if (isNaN(annual_insurance_costs) || annual_insurance_costs < 0) {
+        errorNode = $('#error_annual_insurance_costs');
+        errorNode.removeClass("hide");
         return false;
+    } else {
+        errorNode = $('#error_annual_insurance_costs');
+        errorNode.addClass('hide');
     }
-    if(!isNaN(interest_rate)) {
+
+    if (isNaN(interest_rate) || interest_rate < 0) {
+        errorNode = $('#error_interest_rate');
+        errorNode.removeClass("hide");
         return false;
+    } else {
+        errorNode = $('#error_interest_rate');
+        errorNode.addClass('hide');
     }
 
 
-    return isNaN(number_of_years);
+    if (isNaN(number_of_years) || number_of_years < 0) {
+        errorNode = $('#error_number_of_years');
+        errorNode.removeClass("hide");
+        return false;
+    } else {
+        errorNode = $('#error_number_of_years');
+        errorNode.addClass('hide');
+    }
+
+
+    var mortgageObject = {};
+    mortgageObject.mortgage_amount = mortgage_amount;
+    mortgageObject.annual_property_taxes = annual_property_taxes;
+    mortgageObject.annual_insurance_costs = annual_insurance_costs;
+    mortgageObject.interest_rate = interest_rate;
+    mortgageObject.number_of_years = number_of_years;
+
+    return true;
 }
 
 var object = {};
